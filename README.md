@@ -1,5 +1,5 @@
 # CrabInfo
-A tool for the crabbiest tools.
+A rusty tool for crabs, or something like that.
 
 ## Purpose
 I hope to make this into a crabby multitool for getting system information in simple and versatile ways.
