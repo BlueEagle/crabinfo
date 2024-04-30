@@ -1,6 +1,6 @@
 use crabinfo;
-use std::process::Command;
 
 fn main() {
-    crabinfo::incomp_poop().expect("There was an issue getting system information.");
+    let system_info = crabinfo::SystemInformation::build();
+    println!("{:?}", system_info);
 }
