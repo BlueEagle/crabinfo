@@ -1,3 +1,5 @@
+use std::process::Command;
+
 #[derive(Debug)]
 pub enum OperatingSystem {
     Macos,
@@ -28,5 +30,16 @@ impl SystemInformation {
             fully_charged: false,
             charge_state: 100,
         }
+    }
+
+    pub fn profile_battery() -> String {
+        String::from_utf8(
+            Command::new("system_profiler")
+                .arg("SPPowerDataType")
+                .output()
+                .expect("Failed to get system power information.")
+                .stdout,
+        )
+        .unwrap()
     }
 }
